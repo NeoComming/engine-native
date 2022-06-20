@@ -3576,6 +3576,10 @@ static bool JSB_glGetSupportedExtensions(se::State& s) {
         jsobj->setArrayElement(element++, se::Value("WEBGL_compressed_texture_etc"));
     }
     
+    if (Configuration::getInstance()->supportsASTC()) {
+        jsobj->setArrayElement(element++, se::Value("WEBGL_compressed_texture_astc"));
+    }
+    
     if (Configuration::getInstance()->supportsStandardDerivatives()) {
         jsobj->setArrayElement(element++, se::Value("OES_standard_derivatives"));
     }
